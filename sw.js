@@ -62,13 +62,13 @@ self.addEventListener('install', (event) => {
         addResourcesToCache([
             '/app.js',
             '/core.js',
+            '/icon.png',
             '/index.html',
             '/index.js',
             '/manifest.json',
             '/style.js',
             '/sw.js',
             '/webitJS.js',
-            '/test.png',
         ])
     );
 });
@@ -78,7 +78,7 @@ self.addEventListener('fetch', (event) => {
         cacheFirst({
             request: event.request,
             preloadResponsePromise: event.preloadResponse,
-            fallbackUrl: '/test.png',
+            fallbackUrl: '/icon.png',
         })
     );
 });
